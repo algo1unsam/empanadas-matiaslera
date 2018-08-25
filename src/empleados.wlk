@@ -24,29 +24,27 @@ object gimenez {
 
 object baigorria {
 
-	var cantidadEmpanadasVendidas = 100
+	var cantidadEmpanadasVendidas = 1000
 	var montoPorEmpanada = 15
-	var dineroTotal
-	var deuda
-
+	
+	var deuda =0
+	var dinero = 0
 	method venderEmpanada() {
 		cantidadEmpanadasVendidas += 1
 	}
 
-	method sueldo() {
-		dineroTotal = cantidadEmpanadasVendidas * montoPorEmpanada
-	}
-
 	method cobrarSueldo() {
-		dineroTotal -= deuda
+		var sueldo = cantidadEmpanadasVendidas * montoPorEmpanada
+		dinero+=sueldo
+		dinero =dinero- deuda
 	}
 
-	method totalDinero() = dineroTotal
+	method totalDinero() = dinero
 
 	method totalDeuda() = deuda
 
 	method gastar(cuanto) {
-		if (cuanto > dineroTotal) deuda += cuanto
+		deuda=cuanto
 	}
 
 }
