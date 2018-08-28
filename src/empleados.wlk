@@ -36,6 +36,7 @@ object baigorria {
 		deuda= 0}
 		else {deuda-=dinero
 			dinero=0
+			
 		}
 		
 	}

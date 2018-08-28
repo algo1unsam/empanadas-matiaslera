@@ -55,4 +55,5 @@ Ahora, totalDeuda() pasa a 7000, y totalDinero() a 0."{
 	assert.equals(22000, baigorria.totalDeuda())
 	baigorria.cobrarSueldo()
 	assert.equals(7000, baigorria.totalDeuda())
+	
 }
