@@ -20,8 +20,9 @@ object baigorria {
 
 	method venderEmpanada() {
 		cantidadEmpanadasVendidas += 1
-	} 
-	method sueldo(){
+	}
+
+	method sueldo() {
 		return cantidadEmpanadasVendidas * montoPorEmpanada
 	}
 
@@ -29,16 +30,15 @@ object baigorria {
 		dinero += self.sueldo()
 		self.pagarDeuda()
 	}
-	
-	method pagarDeuda(){
-		if(dinero>deuda)
-		{dinero -=deuda
-		deuda= 0}
-		else {deuda-=dinero
-			dinero=0
-			
+
+	method pagarDeuda() {
+		if (dinero > deuda) {
+			dinero -= deuda
+			deuda = 0
+		} else {
+			deuda -= dinero
+			dinero = 0
 		}
-		
 	}
 
 	method totalDinero() = dinero
@@ -46,11 +46,14 @@ object baigorria {
 	method totalDeuda() = deuda
 
 	method gastar(monto) {
-		if (dinero>monto)
-		dinero-=monto
-		else deuda-=dinero
-		dinero=0
-		deuda+=monto
+		if (dinero > monto) {
+			dinero -= monto
+		} else {
+			deuda -= dinero
+			dinero = 0
+			deuda += monto
+			// acá te agregué las llaves porque no quedaba claro
+		}
 	}
 
 }
@@ -58,7 +61,6 @@ object baigorria {
 object galvan {
 
 	var property dinero = 300000
-
 
 	method pagarA(empleado) {
 		dinero -= empleado.sueldo()
